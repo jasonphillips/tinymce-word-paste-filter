@@ -1,0 +1,19 @@
+language: node_js
+os: linux
+
+node_js:
+  - node
+
+cache: yarn
+
+addons:
+  chrome: stable
+
+before_script:
+  - git submodule update
+  - yarn install 
+
+script:
+  - yarn run build
+  - yarn run test 
+
