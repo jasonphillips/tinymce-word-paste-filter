@@ -1,7 +1,7 @@
 ## TinyMCE Word Paste Filter (standalone)
 Standalone filter for pasted MS Word HTML content; extracted from TinyMCE
 
-[![npm version](https://badge.fury.io/js/tinymce-word-paste-filter.svg)](https://badge.fury.io/js/tinymce-word-paste-filter) ![Build Status](https://travis-ci.org/jasonphillips/tinymce-word-paste-filter.svg?branch=master) [![npm downloads](https://img.shields.io/npm/dm/tinymce-word-paste-filter.svg)](https://www.npmjs.com/package/tinymce-word-paste-filter)
+[![npm version](https://badge.fury.io/js/tinymce-word-paste-filter.svg)](https://badge.fury.io/js/tinymce-word-paste-filter) [![Build Status](https://travis-ci.org/jasonphillips/tinymce-word-paste-filter.svg?branch=master)](https://travis-ci.org/jasonphillips/tinymce-word-paste-filter) [![npm downloads](https://img.shields.io/npm/dm/tinymce-word-paste-filter.svg)](https://www.npmjs.com/package/tinymce-word-paste-filter)
 
 
 ### What?
@@ -30,7 +30,7 @@ Typescript types are included.
 
 Please note that this is intended to be bundled into browser applications; if running in a node environment for some reason, you'll need to have browser / dom globals (document, navigator, etc) available.
 
-See the brief test under `./standalone/test/` and its fixtures.
+See the brief test under `./test/` and its fixtures.
 
 
 ### Building from source, testing
