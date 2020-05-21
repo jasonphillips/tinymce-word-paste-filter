@@ -9,7 +9,8 @@ cache: yarn
 before_script:
   - git submodule update
   - yarn install
-  - cd tinymce && yarn install && yarn run build
+  - cd tinymce && yarn install && yarn run build 
+  - cd $TRAVIS_BUILD_DIR && yarn run build 
 
 script:
   - yarn run test 
