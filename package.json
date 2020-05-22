@@ -1,6 +1,6 @@
 {
   "name": "tinymce-word-paste-filter",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/jasonphillips/tinymce-word-paste-filter.git"
@@ -15,7 +15,8 @@
     "test": "mocha --require @babel/register test/",
     "build": "yarn build:extract && yarn build:lib",
     "build:extract": "rollup -c rollup.standalone-config.js",
-    "build:lib": "rimraf lib/* && tsc"
+    "build:types": "rimraf lib/* && tsc --emitDeclarationOnly",
+    "build:lib": "babel --presets @babel/preset-typescript src/* --out-dir lib/ --extensions \".ts, .js\""
   },
   "main": "lib/node.js",
   "browser": "lib/index.js",
@@ -25,9 +26,10 @@
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/register": "^7.9.0",
     "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/register": "^7.9.0",
     "@ephox/swag": "latest",
     "jsdom": "^11.0.0",
     "load-grunt-tasks": "~3.5.2",
