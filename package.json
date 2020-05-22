@@ -1,6 +1,6 @@
 {
   "name": "tinymce-word-paste-filter",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/jasonphillips/tinymce-word-paste-filter.git"
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "mocha --require @babel/register test/",
-    "build": "yarn build:extract && yarn build:lib",
+    "build": "yarn build:extract && yarn run build:types && yarn build:lib",
     "build:extract": "rollup -c rollup.standalone-config.js",
     "build:types": "rimraf lib/* && tsc --emitDeclarationOnly",
     "build:lib": "babel --presets @babel/preset-typescript src/* --out-dir lib/ --extensions \".ts, .js\""
