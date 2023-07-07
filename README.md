@@ -41,6 +41,11 @@ Make sure to update the submodule first.
 
 ```shell
 git submodule update
+cd tinymce
+yarn install
+yarn run build
+
+cd ..
 yarn install
 yarn run build
 yarn run test
