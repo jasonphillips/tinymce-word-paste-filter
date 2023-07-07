@@ -1,7 +1,7 @@
 ## TinyMCE Word Paste Filter (standalone)
 Standalone filter for pasted MS Word HTML content; extracted from TinyMCE
 
-[![npm version](https://badge.fury.io/js/tinymce-word-paste-filter.svg)](https://badge.fury.io/js/tinymce-word-paste-filter) [![Build Status](https://travis-ci.org/jasonphillips/tinymce-word-paste-filter.svg?branch=master)](https://travis-ci.org/jasonphillips/tinymce-word-paste-filter) [![npm downloads](https://img.shields.io/npm/dm/tinymce-word-paste-filter.svg)](https://www.npmjs.com/package/tinymce-word-paste-filter)
+[![npm version](https://badge.fury.io/js/tinymce-word-paste-filter.svg)](https://badge.fury.io/js/tinymce-word-paste-filter) [![npm downloads](https://img.shields.io/npm/dm/tinymce-word-paste-filter.svg)](https://www.npmjs.com/package/tinymce-word-paste-filter)
 
 
 ### What?
@@ -41,6 +41,11 @@ Make sure to update the submodule first.
 
 ```shell
 git submodule update
+cd tinymce
+yarn install
+yarn run build
+
+cd ..
 yarn install
 yarn run build
 yarn run test
