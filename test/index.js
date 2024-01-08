@@ -14,11 +14,17 @@ global.URL = URL;
 global.window = dom.window;
 
 Object.defineProperty(window, 'matchMedia', {
-	value: () => ({
-		matches: false,
-		addListener: () => {},
-		removeListener: () => {}
-	})
+	writable: true,
+	value: jest.fn().mockImplementation((query) => ({
+	    matches: false,
+	    media: query,
+	    onchange: null,
+	    addListener: jest.fn(), // deprecated
+	    removeListener: jest.fn(), // deprecated
+	    addEventListener: jest.fn(),
+	    removeEventListener: jest.fn(),
+	    dispatchEvent: jest.fn(),
+	  }))
 })
 
 const filterWord = require('../').default;
