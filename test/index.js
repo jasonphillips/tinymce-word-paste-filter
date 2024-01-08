@@ -32,18 +32,18 @@ const filterWord = require('../').default;
 
 describe('fitlers MS Word content', function () {
   it('transforms lists; cleans up styles', function () {
-    const result = filterWord(wordInput);
-    assert.equal(result, cleanedOutput);
+      const result = filterWord(wordInput);
+      assert.equal(result, cleanedOutput);
   });
 
   it('leaves non-Word content untouched', function () {
-    const content = `<p style="font-weight:bold">hello world</p>`;
-    const result = filterWord(content);
-    assert.equal(result, content);
+      const content = `<p style="font-weight:bold">hello world</p>`;
+      const result = filterWord(content);
+      assert.equal(result, content);
   });
 
   it('handles a complex case', function () {
-    const result = filterWord(complexInput);
-    assert.equal(result, complexCleanedOutput);
+      const result = filterWord(complexInput);
+      assert.equal(result, complexCleanedOutput);
   });
 });
