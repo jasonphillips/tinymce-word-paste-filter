@@ -14,12 +14,20 @@ global.URL = URL;
 global.window = dom.window;
 
 Object.defineProperty(window, 'matchMedia', {
-	value: () => ({
-		matches: false,
-		addListener: () => {},
-		removeListener: () => {}
-	})
-})
+    writable: true,
+    value: (query) => {
+      return {
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: () => {}, // deprecated
+        removeListener: () => {}, // deprecated
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => {},
+      };
+    },
+  });
 
 const filterWord = require('../').default;
 
