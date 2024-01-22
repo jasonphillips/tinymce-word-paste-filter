@@ -15,35 +15,36 @@ global.window = dom.window;
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  configurable: true,
-  value: jest.fn().mockImplementation((query) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
+  value: (query) => {
+    return {
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: () => {}, // deprecated
+      removeListener: () => {}, // deprecated
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => {},
+    };
+  },
 });
 
 const filterWord = require('../').default;
 
 describe('fitlers MS Word content', function () {
   it('transforms lists; cleans up styles', function () {
-      const result = filterWord(wordInput);
-      assert.equal(result, cleanedOutput);
+    const result = filterWord(wordInput);
+    assert.equal(result, cleanedOutput);
   });
 
   it('leaves non-Word content untouched', function () {
-      const content = `<p style="font-weight:bold">hello world</p>`;
-      const result = filterWord(content);
-      assert.equal(result, content);
+    const content = `<p style="font-weight:bold">hello world</p>`;
+    const result = filterWord(content);
+    assert.equal(result, content);
   });
 
   it('handles a complex case', function () {
-      const result = filterWord(complexInput);
-      assert.equal(result, complexCleanedOutput);
+    const result = filterWord(complexInput);
+    assert.equal(result, complexCleanedOutput);
   });
 });
